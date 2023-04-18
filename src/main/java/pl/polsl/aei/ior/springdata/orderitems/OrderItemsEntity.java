@@ -1,15 +1,14 @@
 package pl.polsl.aei.ior.springdata.orderitems;
 
 import jakarta.persistence.*;
+import java.math.BigDecimal;
+import java.util.UUID;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 import pl.polsl.aei.ior.springdata.orders.OrdersEntity;
 import pl.polsl.aei.ior.springdata.products.ProductsEntity;
-
-import java.math.BigDecimal;
-import java.util.UUID;
 
 @EqualsAndHashCode
 @Getter

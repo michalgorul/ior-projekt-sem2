@@ -1,14 +1,13 @@
 package pl.polsl.aei.ior.springdata.customers;
 
 import jakarta.persistence.*;
+import java.util.Collection;
+import java.util.UUID;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 import pl.polsl.aei.ior.springdata.orders.OrdersEntity;
-
-import java.util.Collection;
-import java.util.UUID;
 
 @EqualsAndHashCode
 @Getter
