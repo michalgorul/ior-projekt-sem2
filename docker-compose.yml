@@ -5,9 +5,9 @@ services:
     image: mysql:5.7
     restart: always
     environment:
-      MYSQL_DATABASE: 'hiber'
-      MYSQL_USER: 'hiber'
-      MYSQL_PASSWORD: 'hiber'
-      MYSQL_ROOT_PASSWORD: 'hiber'
+      MYSQL_DATABASE: 'store'
+      MYSQL_USER: 'store'
+      MYSQL_PASSWORD: 'store'
+      MYSQL_ROOT_PASSWORD: 'store'
     ports:
       - '3306:3306'
