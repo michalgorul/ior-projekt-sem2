@@ -3,7 +3,12 @@ package pl.polsl.aei.ior.springdata.customers;
 import java.util.List;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 import pl.polsl.aei.ior.springdata.customers.dto.CustomerDto;
@@ -65,5 +70,13 @@ public class CustomersService {
                 () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Customer not found"));
     customersRepository.delete(customerEntity);
     return customerId;
+  }
+
+  public ResponseEntity<Page<CustomerDto>> getCustomerByFirstNameAndLastNamePageable(
+      String firstName, String lastName, int page, int size, String[] sort) {
+    Pageable pageable = PageRequest.of(page, size, Sort.by(sort));
+    Page<CustomersEntity> customerPage =
+        customersRepository.findByFirstNameAndLastName(firstName, lastName, pageable);
+    return ResponseEntity.ok(customerPage.map(customerDtoMapper));
   }
 }

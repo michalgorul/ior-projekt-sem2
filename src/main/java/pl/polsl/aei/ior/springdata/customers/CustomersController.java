@@ -2,6 +2,8 @@ package pl.polsl.aei.ior.springdata.customers;
 
 import java.util.List;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pl.polsl.aei.ior.springdata.customers.dto.CustomerDto;
 
@@ -32,6 +34,17 @@ public class CustomersController {
     return customersService.getCustomerByFirstNameAndLastName(firstName, lastName);
   }
 
+  @GetMapping("/first-last-name-page")
+  public ResponseEntity<Page<CustomerDto>> getCustomerByFirstNameAndLastNamePageable(
+      @RequestParam String firstName,
+      @RequestParam String lastName,
+      @RequestParam(defaultValue = "0") int page,
+      @RequestParam(defaultValue = "1") int size,
+      @RequestParam(defaultValue = "lastName") String[] sort) {
+    return customersService.getCustomerByFirstNameAndLastNamePageable(
+        firstName, lastName, page, size, sort);
+  }
+
   @GetMapping("/phone/{phoneNumber}")
   public List<CustomerDto> getCustomerByPhoneNumberLike(@PathVariable String phoneNumber) {
     return customersService.getCustomerByPhoneNumberLike(phoneNumber);
@@ -42,13 +55,13 @@ public class CustomersController {
     return customersService.getCustomerByAddress(address);
   }
 
-  @GetMapping("/address")
+  @GetMapping("/name-city-address")
   public List<CustomerDto> getCustomerByFirstNameAndCityOrAddress(
       @RequestParam String firstName, @RequestParam String city, @RequestParam String address) {
     return customersService.getCustomerByFirstNameAndCityOrAddress(firstName, city, address);
   }
 
-  @GetMapping("/address/{lastName}")
+  @GetMapping("/last-name/{lastName}")
   public List<CustomerDto> getCustomerByLastName(@PathVariable String lastName) {
     return customersService.getCustomerByLastName(lastName);
   }
