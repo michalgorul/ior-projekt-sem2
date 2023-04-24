@@ -126,9 +126,20 @@ public class DataGenerator implements CommandLineRunner {
             .state("TX")
             .zipCode("24680")
             .build();
+    CustomersEntity customer6 =
+        CustomersEntity.builder()
+            .firstName("John")
+            .lastName("Doe")
+            .email("johndoe@example.com")
+            .phoneNumber("555-1234")
+            .address("123 Main St")
+            .city("Anytown")
+            .state("TX")
+            .zipCode("12345")
+            .build();
 
     List<CustomersEntity> customers =
-        List.of(customer1, customer2, customer3, customer4, customer5);
+        List.of(customer1, customer2, customer3, customer4, customer5, customer6);
     customersRepository.saveAll(customers);
 
     //    Orders

@@ -1,5 +1,6 @@
 package pl.polsl.aei.ior.springdata.categories;
 
+import java.util.Optional;
 import java.util.UUID;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -16,4 +17,6 @@ public interface CategoriesRepository extends JpaRepository<CategoriesEntity, UU
           "DELETE FROM product_categories WHERE category_id IN (SELECT category_id FROM categories); DELETE FROM categories",
       nativeQuery = true)
   void deleteAll();
+
+  Optional<CategoriesEntity> findByCategoryNameAndCategoryId(String name, UUID categoryId);
 }
