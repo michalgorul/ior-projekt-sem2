@@ -26,11 +26,7 @@ public class CategoriesEntity {
   @Column(name = "category_name")
   private String categoryName;
 
-  @ManyToMany
-  @JoinTable(
-      name = "product_categories",
-      joinColumns = @JoinColumn(name = "category_id"),
-      inverseJoinColumns = @JoinColumn(name = "product_id"))
+  @ManyToMany(mappedBy = "categoriesEntities", cascade = CascadeType.ALL)
   private Collection<ProductsEntity> productsEntities;
 
   public CategoriesEntity(String categoryName) {

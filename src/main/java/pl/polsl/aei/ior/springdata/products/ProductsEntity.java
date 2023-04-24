@@ -37,7 +37,11 @@ public class ProductsEntity {
   @OneToMany(mappedBy = "productsByProductId")
   private Collection<OrderItemsEntity> orderItemsByProductId;
 
-  @ManyToMany(mappedBy = "productsEntities")
+  @ManyToMany()
+  @JoinTable(
+      name = "product_categories",
+      joinColumns = @JoinColumn(name = "product_id"),
+      inverseJoinColumns = @JoinColumn(name = "category_id"))
   private Collection<CategoriesEntity> categoriesEntities;
 
   public ProductsEntity(String productName, String description, BigDecimal price) {

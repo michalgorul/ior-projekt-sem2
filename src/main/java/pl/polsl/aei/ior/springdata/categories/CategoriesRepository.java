@@ -11,6 +11,9 @@ import org.springframework.transaction.annotation.Transactional;
 public interface CategoriesRepository extends JpaRepository<CategoriesEntity, UUID> {
   @Modifying
   @Transactional
-  @Query(value = "delete from categories", nativeQuery = true)
+  @Query(
+      value =
+          "DELETE FROM product_categories WHERE category_id IN (SELECT category_id FROM categories); DELETE FROM categories",
+      nativeQuery = true)
   void deleteAll();
 }
