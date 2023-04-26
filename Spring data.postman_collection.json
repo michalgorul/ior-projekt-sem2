@@ -1,0 +1,672 @@
+{
+  "info": {
+    "_postman_id": "60daa5b7-a7ff-4750-b404-8d73cce3e8d7",
+    "name": "Spring data",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "15878415"
+  },
+  "item": [
+    {
+      "name": "Customers",
+      "item": [
+        {
+          "name": "Get All Customers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/api/v1/customers",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "customers"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Customer by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/api/v1/customers/11ddc64b-6612-4b20-8be5-e0eb5162ad3",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "customers",
+                "11ddc64b-6612-4b20-8be5-e0eb5162ad3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Customer by ID",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/api/v1/customers/0e5483e8-0987-4bfd-ba37-7d266451bc51",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "customers",
+                "0e5483e8-0987-4bfd-ba37-7d266451bc51"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Customer by First and Last Names",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/api/v1/customers/first-last-name?firstName=John&lastName=Doe",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "customers",
+                "first-last-name"
+              ],
+              "query": [
+                {
+                  "key": "firstName",
+                  "value": "John"
+                },
+                {
+                  "key": "lastName",
+                  "value": "Doe"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Customer by First and Last Names Page",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/api/v1/customers/first-last-name-page?firstName=John&lastName=Doe&page=0&size=2",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "customers",
+                "first-last-name-page"
+              ],
+              "query": [
+                {
+                  "key": "firstName",
+                  "value": "John"
+                },
+                {
+                  "key": "lastName",
+                  "value": "Doe"
+                },
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Customer by First and City or Address",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/api/v1/customers/name-city-address?firstName=John&city=Tighttown&address=654 Narrow St",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "customers",
+                "name-city-address"
+              ],
+              "query": [
+                {
+                  "key": "firstName",
+                  "value": "John"
+                },
+                {
+                  "key": "city",
+                  "value": "Tighttown"
+                },
+                {
+                  "key": "address",
+                  "value": "654 Narrow St"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Customer by Phone like",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/api/v1/customers/phone/555-9",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "customers",
+                "phone",
+                "555-9"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Customer by Last Name",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/api/v1/customers/last-name/Doe",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "customers",
+                "last-name",
+                "Doe"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Customer by Address ignore case",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/api/v1/customers/address/654 narrow st",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "customers",
+                "address",
+                "654 narrow st"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "Get all products",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/api/v1/products",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "products"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get product by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/api/v1/products/10cf8b91-9773-4b92-a74f-b08593f38c52",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "products",
+                "10cf8b91-9773-4b92-a74f-b08593f38c52"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get products by category name",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/api/v1/products/category-name/dairy",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "products",
+                "category-name",
+                "dairy"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get products by product name",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/api/v1/products/name-jpql/apple",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "products",
+                "name-jpql",
+                "apple"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get products by description like",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/api/v1/products/description/juicy",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "products",
+                "description",
+                "juicy"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get products by product name and price",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/api/v1/products/name-price?productName=Milk&price=2.49",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "products",
+                "name-price"
+              ],
+              "query": [
+                {
+                  "key": "productName",
+                  "value": "Milk"
+                },
+                {
+                  "key": "price",
+                  "value": "2.49"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get products by product name and price or description",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/api/v1/products/name-price-description?productName=Milk&price=5&description=Fresh milk from local dairy",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "products",
+                "name-price-description"
+              ],
+              "query": [
+                {
+                  "key": "productName",
+                  "value": "Milk"
+                },
+                {
+                  "key": "price",
+                  "value": "5"
+                },
+                {
+                  "key": "description",
+                  "value": "Fresh milk from local dairy"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get products by product name and price Page",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/api/v1/products/name-price-page?productName=Milk&price=2.49&page=0",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "products",
+                "name-price-page"
+              ],
+              "query": [
+                {
+                  "key": "productName",
+                  "value": "Milk"
+                },
+                {
+                  "key": "price",
+                  "value": "2.49"
+                },
+                {
+                  "key": "page",
+                  "value": "0"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete product by ID",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/api/v1/products/10cf8b91-9773-4b92-a74f-b08593f38c52",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "products",
+                "10cf8b91-9773-4b92-a74f-b08593f38c52"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Orders",
+      "item": [
+        {
+          "name": "Get all orders",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/api/v1/orders",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "orders"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get orders by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/api/v1/orders/3586bd7f-02af-4197-982b-eaf80a96428a",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "orders",
+                "3586bd7f-02af-4197-982b-eaf80a96428a"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get orders by ID Copy",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/api/v1/orders/customer-name/j",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "orders",
+                "customer-name",
+                "j"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get orders by date and price",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/api/v1/orders/date-price?orderDate=2023-04-26&price=30",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "orders",
+                "date-price"
+              ],
+              "query": [
+                {
+                  "key": "orderDate",
+                  "value": "2023-04-26"
+                },
+                {
+                  "key": "price",
+                  "value": "30"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get orders by quantity is less",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/api/v1/orders/quantity/3",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "orders",
+                "quantity",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get orders by lastname and city or price",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/api/v1/orders/customer-name-city-price?lastName=Doe&city=sd&price=180.15",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "orders",
+                "customer-name-city-price"
+              ],
+              "query": [
+                {
+                  "key": "lastName",
+                  "value": "Doe"
+                },
+                {
+                  "key": "city",
+                  "value": "sd"
+                },
+                {
+                  "key": "price",
+                  "value": "180.15"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get orders by date and price page",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/api/v1/orders/date-price-page?orderDate=2023-04-26&price=3000&page=1&size=2",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "orders",
+                "date-price-page"
+              ],
+              "query": [
+                {
+                  "key": "orderDate",
+                  "value": "2023-04-26"
+                },
+                {
+                  "key": "price",
+                  "value": "3000"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "size",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete order by ID",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{host}}/api/v1/orders/3586bd7f-02af-4197-982b-eaf80a96428a",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "orders",
+                "3586bd7f-02af-4197-982b-eaf80a96428a"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
