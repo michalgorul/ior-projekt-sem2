@@ -65,8 +65,8 @@ public class ProductsService {
         .toList();
   }
 
-  public List<ProductDto> findByProductNameIgnoreCase(String productName) {
-    return productsRepository.findByProductNameIgnoreCase(productName).stream()
+  public List<ProductDto> findByCategoryNameIgnoreCase(String categoryName) {
+    return productsRepository.findByCategoriesEntitiesCategoryNameIgnoreCase(categoryName).stream()
         .map(productsDtoMapper)
         .toList();
   }

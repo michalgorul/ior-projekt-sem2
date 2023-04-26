@@ -31,7 +31,7 @@ public interface ProductsRepository extends JpaRepository<ProductsEntity, UUID> 
 
   List<ProductsEntity> findByDescriptionLike(String description);
 
-  List<ProductsEntity> findByProductNameIgnoreCase(String productName);
+  List<ProductsEntity> findByCategoriesEntitiesCategoryNameIgnoreCase(String categoryName);
 
   List<ProductsEntity> findDistinctByProductNameAndPriceOrDescription(
       String productName, BigDecimal price, String description);

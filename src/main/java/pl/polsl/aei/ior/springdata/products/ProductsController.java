@@ -50,9 +50,9 @@ public class ProductsController {
     return productsService.getProductByDescriptionLike(description);
   }
 
-  @GetMapping("/name/{productName}")
-  public List<ProductDto> findByProductNameIgnoreCase(@PathVariable String productName) {
-    return productsService.findByProductNameIgnoreCase(productName);
+  @GetMapping("/category-name/{categoryName}")
+  public List<ProductDto> findByCategoryNameIgnoreCase(@PathVariable String categoryName) {
+    return productsService.findByCategoryNameIgnoreCase(categoryName);
   }
 
   @GetMapping("/name-price-description")
