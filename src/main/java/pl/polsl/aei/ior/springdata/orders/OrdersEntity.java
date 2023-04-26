@@ -35,7 +35,7 @@ public class OrdersEntity {
   @Column(name = "total_price")
   private BigDecimal totalPrice;
 
-  @OneToMany(mappedBy = "ordersByOrderId")
+  @OneToMany(mappedBy = "ordersByOrderId", cascade = CascadeType.ALL)
   private Collection<OrderItemsEntity> orderItemsByOrderId;
 
   @ManyToOne(cascade = CascadeType.ALL)
